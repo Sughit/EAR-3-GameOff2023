@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class FishScript : MonoBehaviour
 {
+    FishBrain fishBrain;
+
+    void Start()
+    {
+        fishBrain=this.gameObject.GetComponent<FishBrain>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.name);
         if(other.name=="hook")
         {
             StartFishing.caughtFish=true;
+            other.GetComponent<RememberFish>().AddFish(this.gameObject);
+            this.gameObject.SetActive(false);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
