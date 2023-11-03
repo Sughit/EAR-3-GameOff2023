@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 6637408781428502131}
   - component: {fileID: 6637408781428502128}
   - component: {fileID: 6637408781428502130}
+  - component: {fileID: 6637408781428502136}
   m_Layer: 0
   m_Name: hook
   m_TagString: Hook
@@ -1054,3 +1055,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6637408781428502136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637408781428502132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea08e892694de9544bcbd3f711fe6ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishList: []
