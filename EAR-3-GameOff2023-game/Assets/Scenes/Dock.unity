@@ -645,7 +645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 220}
+  m_AnchoredPosition: {x: -270, y: 110}
   m_SizeDelta: {x: 640, y: 320}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &570552957
@@ -951,6 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedItemGrid: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: f67954a41b4572e4099b2b9c21f657e9, type: 2}
+  - {fileID: 11400000, guid: ccf1e1c51c8c9634cb914ed8a9ec232d, type: 2}
+  itemPrefab: {fileID: 6884451839856655781, guid: 171229b0cb9753a48bc5207fd6a610e0, type: 3}
+  canvasTransform: {fileID: 403011404}
 --- !u!50 &1937614489
 Rigidbody2D:
   serializedVersion: 4
@@ -1062,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753632167210363416, guid: 02671546cd18a2b4c96003dfb436e4e6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6753632167210363416, guid: 02671546cd18a2b4c96003dfb436e4e6, type: 3}
       propertyPath: m_AnchorMax.x
