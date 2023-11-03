@@ -18,7 +18,7 @@ public class FishSpawner : MonoBehaviour
         if(currentTime<=0)
         {
             Instantiate(fish,transform.position, Quaternion.identity);
-            currentTime=timeToSpawn;
+            currentTime=Random.Range(timeToSpawn-0.5f, timeToSpawn+0.5f);
         }
         else
         {

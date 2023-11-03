@@ -871,11 +871,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDepth: -50
+  numBait: 3
   goUp: 0
   speedUp: 10
   speedDown: 5
   hook: {fileID: 6637408781428502132}
   transition: {fileID: 1856860736}
+  baitText: {fileID: 0}
 --- !u!1 &912011241739258380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,4 +1069,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea08e892694de9544bcbd3f711fe6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishList: []

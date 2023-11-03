@@ -7,6 +7,11 @@ TagManager:
   - Fish
   - Buyer
   - Hook
+  - cod
+  - herring
+  - barracuda
+  - salmon
+  - tuna
   layers:
   - Default
   - TransparentFX

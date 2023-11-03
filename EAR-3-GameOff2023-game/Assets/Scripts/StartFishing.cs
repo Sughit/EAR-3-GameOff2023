@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartFishing : MonoBehaviour
 {
     public static bool startMiniGame;
     [Header("Stats")]
     public float maxDepth;
+    public int numBait = 3;
     [Header("Other")]
     public static bool caughtFish;
     public bool goUp;
@@ -15,11 +17,16 @@ public class StartFishing : MonoBehaviour
     public float speedDown;
     public GameObject hook;
     public GameObject transition;
+    [Header("UI")]
+    public Text baitText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(baitText!=null)
+        {
+            baitText.text=$"Num bait {numBait}";
+        }
     }
 
     // Update is called once per frame
@@ -64,9 +71,30 @@ public class StartFishing : MonoBehaviour
 
     public void StartFishingFunc()
     {
-        Debug.Log("Start game");
-        caughtFish=false;
-        StartCoroutine(Transition());   
+        if(numBait>0)
+        {
+            Debug.Log("Start game");
+            numBait--;
+            if(baitText!=null)
+            {
+                baitText.text=$"Num bait {numBait}";
+            }
+            caughtFish=false;
+            StartCoroutine(Transition()); 
+        }  
+        else
+        {
+            Debug.Log("not bait");
+        }
+    }
+
+    public void CheckBait()
+    {
+        if(numBait<=0)
+        {
+            StartCoroutine(Transition());
+            SceneManager.LoadScene("FishScaling");
+        }
     }
 
     IEnumerator Transition()
