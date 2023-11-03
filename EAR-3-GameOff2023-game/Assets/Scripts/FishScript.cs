@@ -6,7 +6,8 @@ public class FishScript : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="Hook")
+        Debug.Log(other.name);
+        if(other.name=="hook")
         {
             StartFishing.caughtFish=true;
         }
