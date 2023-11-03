@@ -9,7 +9,7 @@ public class StartFishing : MonoBehaviour
     public static bool startMiniGame;
     [Header("Stats")]
     public float maxDepth;
-    public int numBait = 3;
+    public static int numBait = 3;
     [Header("Other")]
     public static bool caughtFish;
     public bool goUp;
