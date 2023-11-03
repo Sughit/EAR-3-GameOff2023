@@ -32,16 +32,21 @@ public class ItemGrid : MonoBehaviour
             return null;
         }
 
-        for (int ix = 0; ix < toReturn.itemData.width; ix++)
+
+        CleanGridReference(toReturn);
+
+        return toReturn;
+    }
+
+    void CleanGridReference(InventoryItem item)
+    {
+        for (int ix = 0; ix < item.itemData.width; ix++)
         {
-            for (int iy = 0; iy < toReturn.itemData.height; iy++)
+            for (int iy = 0; iy < item.itemData.height; iy++)
             {
-                inventoryItemSlot[toReturn.onGridPositionX + ix, toReturn.onGridPositionY + iy] = null;
+                inventoryItemSlot[item.onGridPositionX + ix, item.onGridPositionY + iy] = null;
             }
         }
-
-        inventoryItemSlot[x, y] = null;
-        return toReturn;
     }
 
     void Init(int width, int height)
@@ -65,13 +70,27 @@ public class ItemGrid : MonoBehaviour
         return tileGridPosition;
     }
 
-    public bool PlaceItem(InventoryItem inventoryItem, int posX, int posY)
+    public bool PlaceItem(InventoryItem inventoryItem, int posX, int posY, ref InventoryItem overlapItem)
     {
 
         if (BoundryCheck(posX, posY, inventoryItem.itemData.width, inventoryItem.itemData.height) == false)
             return false;
+
+
+        if(OverlapCheck(posX, posY, inventoryItem.itemData.width, inventoryItem.itemData.height, ref overlapItem) == false)
+        {
+            overlapItem = null;
+            return false;
+        }
+
+        if(overlapItem !=null)
+            CleanGridReference(overlapItem);
+
+
         RectTransform rectTransform = inventoryItem.GetComponent<RectTransform>();
         rectTransform.SetParent(this.rectTransform);
+
+
 
         for (int x = 0; x < inventoryItem.itemData.width; x++)
         {
@@ -94,6 +113,24 @@ public class ItemGrid : MonoBehaviour
 
         return true;
         
+    }
+
+    private bool OverlapCheck(int posX, int posY, int width, int height, ref InventoryItem overlapItem)
+    {
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if(inventoryItemSlot[posX + x, posY + y] != null)
+                    if (overlapItem == null)
+                        overlapItem = inventoryItemSlot[posX + x, posY + y];
+                    else
+                        if(overlapItem != inventoryItemSlot[posX + x, posY + y])
+                            return false;
+            }
+        }
+        return true;
     }
 
     bool PositionCheck(int posX, int posY)

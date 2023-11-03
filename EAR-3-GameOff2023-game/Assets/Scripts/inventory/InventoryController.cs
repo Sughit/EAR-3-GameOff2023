@@ -7,6 +7,7 @@ public class InventoryController : MonoBehaviour
     [HideInInspector]
     public ItemGrid selectedItemGrid;
     InventoryItem selectedItem;
+    InventoryItem overlapItem;
     RectTransform rectTransform;
     [SerializeField] List<ItemData> items;
     [SerializeField] GameObject itemPrefab;
@@ -31,6 +32,14 @@ public class InventoryController : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+
+            Vector2 position = Input.mousePosition;
+
+            if (selectedItem != null)
+            {
+                position.x -= (selectedItem.itemData.width - 1) * ItemGrid.tileSizeWidth / 2;
+                position.y -= (selectedItem.itemData.height - 1) * ItemGrid.tileSizeHeight / 2;
+            }
             Vector2Int tileGridPosition = selectedItemGrid.GetTileGridPosition(Input.mousePosition);
 
             if (selectedItem == null)
@@ -57,9 +66,17 @@ public class InventoryController : MonoBehaviour
     }
     void PlaceItem(Vector2Int tileGridPosition)
     {
-        bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y);
+        bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);
         if (complete)
-            selectedItem = null;
+            {
+                selectedItem = null;
+                if(overlapItem != null)
+                {
+                    selectedItem = overlapItem;
+                    overlapItem = null;
+                    rectTransform = selectedItem.GetComponent<RectTransform>();
+                }
+            }
     }
     void PickUpItem(Vector2Int tileGridPosition)
     {
