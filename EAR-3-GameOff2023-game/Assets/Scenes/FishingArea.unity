@@ -871,12 +871,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDepth: -50
-  numBait: 3
   goUp: 0
   speedUp: 10
   speedDown: 5
   hook: {fileID: 6637408781428502132}
   transition: {fileID: 1856860736}
+  seeCaughtFish: {fileID: 912011241739258381}
   baitText: {fileID: 0}
 --- !u!1 &912011241739258380
 GameObject:
@@ -888,6 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 912011241739258378}
   - component: {fileID: 912011241739258379}
+  - component: {fileID: 912011241739258381}
   m_Layer: 0
   m_Name: fishingManager
   m_TagString: Untagged
@@ -895,6 +896,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &912011241739258381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912011241739258380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9df5c973fb0584b8a6fcd4e6f9f32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6637408781428502128
 MonoBehaviour:
   m_ObjectHideFlags: 0

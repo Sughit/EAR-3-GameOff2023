@@ -9,6 +9,9 @@ public class StartFishing : MonoBehaviour
     public static bool startMiniGame;
     [Header("Stats")]
     public float maxDepth;
+    //asta se schimba cand dai upgrade
+    public static int maxNumBait = 3;
+    //nu asta
     public static int numBait = 3;
     [Header("Other")]
     public static bool caughtFish;
@@ -17,6 +20,7 @@ public class StartFishing : MonoBehaviour
     public float speedDown;
     public GameObject hook;
     public GameObject transition;
+    public SeeCaughtFish seeCaughtFish;
     [Header("UI")]
     public Text baitText;
 
@@ -110,6 +114,7 @@ public class StartFishing : MonoBehaviour
         else if(SceneManager.GetActiveScene().name == "FishingArea")
         {
             SceneManager.LoadScene("Dock");
+            seeCaughtFish.SpawnFishItem();
             goUp=false;
             startMiniGame=false;
         }
