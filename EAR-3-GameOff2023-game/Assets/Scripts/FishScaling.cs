@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishScaling : MonoBehaviour
 {
+    public GameObject transition;
+    [Space]
     public GameObject[] fishList;
     bool canCod;
     bool canBarracuda;
@@ -11,7 +14,31 @@ public class FishScaling : MonoBehaviour
     bool canHerring;
     bool canTuna;
 
-    public void ShowFish()
+    void Start()
+    {
+        SeeWhatFishToShow();
+        ScaleFish();
+    }
+
+    public void NextFish()
+    {
+        foreach(var fish in fishList)
+        {
+            if(fish.gameObject.activeSelf)
+                fish.gameObject.SetActive(false);
+        }
+        ScaleFish();
+    }
+
+    public void ToDock()
+    {
+        if(!canCod && !canBarracuda && !canHerring && !canSalmon && !canTuna)
+        {
+            StartCoroutine(Transition());
+        }
+    }
+
+    public void SeeWhatFishToShow()
     {
         if(RememberFish.numCod>=1)
             canCod=true;
@@ -60,5 +87,13 @@ public class FishScaling : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator Transition()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Dock");
     }
 }
