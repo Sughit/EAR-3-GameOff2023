@@ -6,6 +6,7 @@ public class openInventory : MonoBehaviour
 {
     public GameObject inv;
     bool invOpen;
+    public static bool aux;
     void Start()
     {
         inv.SetActive(false);
@@ -14,7 +15,22 @@ public class openInventory : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
-            if(!invOpen)
+            aux = true;
+            if(aux)
+                OpenInv();
+
+
+        if(invOpen && Input.GetKeyDown(KeyCode.Escape))
+        {
+            inv.SetActive(false);
+            invOpen = false;
+        }
+    }
+
+    public void OpenInv()
+    {
+        aux = false;
+        if(!invOpen)
             {
                 inv.SetActive(true);
                 invOpen = true;
@@ -24,12 +40,5 @@ public class openInventory : MonoBehaviour
                 inv.SetActive(false);
                 invOpen = false;
             }
-
-
-        if(invOpen && Input.GetKeyDown(KeyCode.Escape))
-        {
-            inv.SetActive(false);
-            invOpen = false;
-        }
     }
 }

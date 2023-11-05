@@ -15,6 +15,9 @@ public class InventoryController : MonoBehaviour
     InventoryHighlight inventoryHighlight;
     InventoryItem itemToHighlight;
     Vector2Int oldPosition;
+    public static bool codS, barracudaS, salmonS, herringS, tunaS;
+    public static bool codB, barracudaB, salmonB, herringB, tunaB;
+    string fish;
     public ItemGrid SelectedItemGrid
     { 
         get => selectedItemGrid; 
@@ -33,11 +36,21 @@ public class InventoryController : MonoBehaviour
     {
         ItemIconDrag();
 
-
         if(Input.GetKeyDown(KeyCode.Q))
         {
             CreateRandomItem();
         }
+        
+        if(codS)
+            CreateItem(0);
+        if(barracudaS)
+            CreateItem(1);
+        if(salmonS)
+            CreateItem(3);
+        if(herringS)
+            CreateItem(2);
+        if(tunaS)
+            CreateItem(4);
 
         //totul codul trebuie sa fie scris neaparat sub if-ul asta
         if(selectedItemGrid == null)
@@ -117,8 +130,23 @@ public class InventoryController : MonoBehaviour
             return tileGridPosition;
     }
 
-    void CreateRandomItem()
+
+    public void CreateItem(int fish)
     {
+        openInventory.aux = true;
+        codS = barracudaS = salmonS = herringS = tunaS = false;
+        InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
+        selectedItem = inventoryItem;
+
+        rectTransform = inventoryItem.GetComponent<RectTransform>();
+        rectTransform.SetParent(canvasTransform);
+
+        int selectedItemID = fish;
+        inventoryItem.Set(items[selectedItemID]);
+    }
+    public void CreateRandomItem()
+    {
+        Debug.Log("randomItem");
         InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
         selectedItem = inventoryItem;
 

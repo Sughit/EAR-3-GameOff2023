@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SeeCaughtFish : MonoBehaviour
 {
+    public InventoryController inventoryController;
     public void SpawnFishItem()
     {
         //Spawn cod item
         if(RememberFish.caughtCod)
         {
             RememberFish.caughtCod=false;
+            InventoryController.codS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big cod");
@@ -23,6 +25,7 @@ public class SeeCaughtFish : MonoBehaviour
         else if(RememberFish.caughtBarracuda)
         {
             RememberFish.caughtBarracuda=false;
+            InventoryController.barracudaS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big barracuda");
@@ -36,6 +39,7 @@ public class SeeCaughtFish : MonoBehaviour
         else if(RememberFish.caughtHerring)
         {
             RememberFish.caughtHerring=false;
+            InventoryController.herringS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big herring");
@@ -48,7 +52,9 @@ public class SeeCaughtFish : MonoBehaviour
         //Spawn salmon item
         else if(RememberFish.caughtSalmon)
         {
+
             RememberFish.caughtSalmon=false;
+            InventoryController.salmonS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big salmon");
@@ -62,6 +68,7 @@ public class SeeCaughtFish : MonoBehaviour
         else if(RememberFish.caughtTuna)
         {
             RememberFish.caughtTuna=false;
+            InventoryController.tunaS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big tuna");
