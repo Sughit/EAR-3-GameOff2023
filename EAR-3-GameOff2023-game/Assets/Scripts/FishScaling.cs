@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class FishScaling : MonoBehaviour
 {
     public GameObject transition;
+    public DayManager dayManager;
     [Space]
     public GameObject[] fishList;
     bool canCod;
@@ -32,28 +33,27 @@ public class FishScaling : MonoBehaviour
 
     public void EndDay()
     {
-        
-    }
-
-    public void ToDock()
-    {
         if(!canCod && !canBarracuda && !canHerring && !canSalmon && !canTuna)
         {
             StartCoroutine(Transition());
+        }
+        else
+        {
+            Debug.Log("There are fish to be scaled");
         }
     }
 
     public void SeeWhatFishToShow()
     {
-        if(RememberFish.numCod>=1)
+        if(RememberFish.numCodS>=1 || RememberFish.numCodB>=1)
             canCod=true;
-        if(RememberFish.numBarracuda>=1)
+        if(RememberFish.numBarracudaS>=1 || RememberFish.numBarracudaB>=1)
             canBarracuda=true;
-        if(RememberFish.numSalmon>=1)
+        if(RememberFish.numSalmonS>=1 || RememberFish.numSalmonB>=1)
             canSalmon=true;
-        if(RememberFish.numHerring>=1)
+        if(RememberFish.numHerringS>=1 || RememberFish.numHerringB>=1)
             canHerring=true;
-        if(RememberFish.numTuna>=1)
+        if(RememberFish.numTunaS>=1 || RememberFish.numTunaB>=1)
             canTuna=true;
     }
 
@@ -99,6 +99,6 @@ public class FishScaling : MonoBehaviour
         Animator transitionAnim=transition.GetComponent<Animator>();
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Dock");
+        dayManager.CalculateMoney();
     }
 }

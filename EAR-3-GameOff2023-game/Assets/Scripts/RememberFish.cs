@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class RememberFish : MonoBehaviour
 {
-    public static int numCod;
-    public static int numBarracuda;
-    public static int numSalmon;
-    public static int numHerring;
-    public static int numTuna;
+    public static int numCodS;
+    public static int numBarracudaS;
+    public static int numSalmonS;
+    public static int numHerringS;
+    public static int numTunaS;
+
+    public static int numCodB;
+    public static int numBarracudaB;
+    public static int numSalmonB;
+    public static int numHerringB;
+    public static int numTunaB;
 
     public string[] fishList= new string[StartFishing.maxNumBait];
     public int index;
@@ -31,23 +37,23 @@ public class RememberFish : MonoBehaviour
             {
                 case "cod":
                 caughtCod=true;
-                numCod++;
+                numCodS++;
                 break;
                 case "barracuda":
                 caughtBarracuda=true;
-                numBarracuda++;
+                numBarracudaS++;
                 break;
                 case "herring":
                 caughtHerring=true;
-                numHerring++;
+                numHerringS++;
                 break;
                 case "salmon":
                 caughtSalmon=true;
-                numSalmon++;
+                numSalmonS++;
                 break;
                 case "tuna":
                 caughtTuna=true;
-                numTuna++;
+                numTunaS++;
                 break;
                 default:
                 Debug.Log("Peste neidentificat");

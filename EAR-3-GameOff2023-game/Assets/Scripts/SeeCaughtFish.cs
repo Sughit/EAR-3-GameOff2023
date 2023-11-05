@@ -15,6 +15,8 @@ public class SeeCaughtFish : MonoBehaviour
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big cod");
+                RememberFish.numCodS--;
+                RememberFish.numCodB++;
             }
             else
             {
@@ -29,6 +31,8 @@ public class SeeCaughtFish : MonoBehaviour
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big barracuda");
+                RememberFish.numBarracudaS--;
+                RememberFish.numBarracudaB++;
             }
             else
             {
@@ -43,6 +47,8 @@ public class SeeCaughtFish : MonoBehaviour
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big herring");
+                RememberFish.numHerringS--;
+                RememberFish.numHerringB++;
             }
             else
             {
@@ -58,6 +64,8 @@ public class SeeCaughtFish : MonoBehaviour
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big salmon");
+                RememberFish.numSalmonS--;
+                RememberFish.numSalmonB++;
             }
             else
             {
@@ -72,6 +80,8 @@ public class SeeCaughtFish : MonoBehaviour
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big tuna");
+                RememberFish.numTunaS--;
+                RememberFish.numTunaB++;
             }
             else
             {
