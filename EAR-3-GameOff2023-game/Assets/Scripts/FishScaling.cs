@@ -30,6 +30,11 @@ public class FishScaling : MonoBehaviour
         ScaleFish();
     }
 
+    public void EndDay()
+    {
+        
+    }
+
     public void ToDock()
     {
         if(!canCod && !canBarracuda && !canHerring && !canSalmon && !canTuna)
