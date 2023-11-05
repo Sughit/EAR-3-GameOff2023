@@ -31,6 +31,7 @@ public class InventoryController : MonoBehaviour
     void Awake()
     {
         inventoryHighlight = GetComponent<InventoryHighlight>();
+        canvasTransform = GameObject.Find("Canvas").GetComponent<Transform>();
     }
     void Update()
     {

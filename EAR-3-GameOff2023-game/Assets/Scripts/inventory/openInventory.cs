@@ -7,6 +7,7 @@ public class openInventory : MonoBehaviour
     public GameObject inv;
     bool invOpen;
     public static bool aux;
+
     void Start()
     {
         inv.SetActive(false);

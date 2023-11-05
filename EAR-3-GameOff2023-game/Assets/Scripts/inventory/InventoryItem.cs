@@ -9,6 +9,11 @@ public class InventoryItem : MonoBehaviour
     public int onGridPositionX;
     public int onGridPositionY;
 
+    public void Awake()
+    {
+        
+    }
+
     internal void Set(ItemData itemData)
     {
         this.itemData = itemData;
