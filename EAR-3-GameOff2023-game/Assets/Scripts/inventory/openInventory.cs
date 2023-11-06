@@ -5,7 +5,7 @@ using UnityEngine;
 public class openInventory : MonoBehaviour
 {
     public GameObject inv;
-    bool invOpen;
+    public bool invOpen;
     public static bool aux;
 
     void Start()

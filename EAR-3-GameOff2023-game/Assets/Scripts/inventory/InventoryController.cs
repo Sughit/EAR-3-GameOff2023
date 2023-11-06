@@ -18,6 +18,7 @@ public class InventoryController : MonoBehaviour
     public static bool codS, barracudaS, salmonS, herringS, tunaS;
     public static bool codB, barracudaB, salmonB, herringB, tunaB;
     string fish;
+        openInventory openInv;
     public ItemGrid SelectedItemGrid
     { 
         get => selectedItemGrid; 
@@ -32,6 +33,7 @@ public class InventoryController : MonoBehaviour
     {
         inventoryHighlight = GetComponent<InventoryHighlight>();
         canvasTransform = GameObject.Find("Canvas").GetComponent<Transform>();
+        openInv = GameObject.Find("Canvas").GetComponent<openInventory>();
     }
     void Update()
     {
@@ -147,7 +149,9 @@ public class InventoryController : MonoBehaviour
     }
     public void CreateRandomItem()
     {
-        Debug.Log("randomItem");
+        if(openInv.invOpen)
+        {
+            Debug.Log("randomItem");
         InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
         selectedItem = inventoryItem;
 
@@ -156,6 +160,7 @@ public class InventoryController : MonoBehaviour
 
         int selectedItemID = UnityEngine.Random.Range(0, items.Count);
         inventoryItem.Set(items[selectedItemID]);
+        }
     }
     void PlaceItem(Vector2Int tileGridPosition)
     {
