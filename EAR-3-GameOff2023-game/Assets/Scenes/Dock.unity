@@ -591,6 +591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inv: {fileID: 557495810}
+  invOpen: 0
+  cam: {fileID: 1937614484}
 --- !u!1 &430907347
 GameObject:
   m_ObjectHideFlags: 0
