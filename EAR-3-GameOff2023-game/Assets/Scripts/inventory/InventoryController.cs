@@ -191,4 +191,9 @@ public class InventoryController : MonoBehaviour
             rectTransform.position = Input.mousePosition;
         }
     }
+
+    public void Delete()
+    {
+        Destroy(selectedItem.gameObject);
+    }
 }
