@@ -5,6 +5,11 @@ using UnityEngine;
 public class InventoryHighlight : MonoBehaviour
 {
     [SerializeField] RectTransform highliter;
+    void Awake()
+    {
+        highliter = GameObject.Find("Canvas/Inventory/highlighter").GetComponent<RectTransform>();
+    }
+
     public void Show(bool b)
     {
         highliter.gameObject.SetActive(b);

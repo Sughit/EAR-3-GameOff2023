@@ -5,6 +5,7 @@ using UnityEngine;
 public class SeeCaughtFish : MonoBehaviour
 {
     public InventoryController inventoryController;
+    public static SeeCaughtFish Instance;
     public void SpawnFishItem()
     {
         //Spawn cod item

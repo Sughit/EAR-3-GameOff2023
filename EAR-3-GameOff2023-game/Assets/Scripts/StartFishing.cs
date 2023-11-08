@@ -23,10 +23,16 @@ public class StartFishing : MonoBehaviour
     public SeeCaughtFish seeCaughtFish;
     [Header("UI")]
     public Text baitText;
+    openInventory openInv;
 
     // Start is called before the first frame update
     void Start()
     {
+        openInv = GameObject.Find("Canvas").GetComponent<openInventory>();
+        if(SceneManager.GetActiveScene().name == "Dock")
+            transition = GameObject.Find("Canvas2/transition");
+        if(SceneManager.GetActiveScene().name == "FishingArea")
+            transition = GameObject.Find("Canvas/transition");
         if(baitText!=null)
         {
             baitText.text=$"Num bait {numBait}";
@@ -84,6 +90,7 @@ public class StartFishing : MonoBehaviour
                 baitText.text=$"Num bait {numBait}";
             }
             caughtFish=false;
+            openInv.inv.SetActive(false);
             StartCoroutine(Transition()); 
         }  
         else
