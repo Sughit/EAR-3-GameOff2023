@@ -8,7 +8,7 @@ public class StartFishing : MonoBehaviour
 {
     public static bool startMiniGame;
     [Header("Stats")]
-    public float maxDepth;
+    public static float maxDepth = -50f;
     //asta se schimba cand dai upgrade
     public static int maxNumBait = 3;
     //nu asta

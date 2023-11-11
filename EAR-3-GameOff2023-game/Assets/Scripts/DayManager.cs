@@ -41,6 +41,11 @@ public class DayManager : MonoBehaviour
         StartCoroutine(Transition());
     }
 
+    public void Upgrade()
+    {
+        StartCoroutine(TransitionToUpgrade());
+    }
+
     IEnumerator Transition()
     {
         Animator transitionAnim=transition.GetComponent<Animator>();
@@ -48,5 +53,13 @@ public class DayManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         dayMenu.SetActive(false);
         SceneManager.LoadScene("Dock");
+    }
+
+    IEnumerator TransitionToUpgrade()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Upgrade");
     }
 }
