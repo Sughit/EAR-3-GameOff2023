@@ -22,8 +22,8 @@ public class upgradeManager : MonoBehaviour
     [Header("Stats")]
     public float rodLength;
     public int numBait;
-    public int widthInv=4;
-    public int lengthInv=5;
+    public int widthInv=128;
+    public int heightInv=96;
 
     bool rodI;
     bool rodII;
@@ -110,6 +110,39 @@ public class upgradeManager : MonoBehaviour
                 baitPrice=50;
                 baitText.text="Bait III";
                 baitButtonText.text="Maxed out";
+            }
+        }
+    }
+
+    public void UpgradeInventory()
+    {
+        if(DayManager.moneyNum >= inventoryPrice)
+        {
+            if(SetInvSize.width==4*32 && SetInvSize.height==3*32)
+            {
+                invI=true;
+            }
+            else if(SetInvSize.width==5*32 && SetInvSize.height==4*32)
+            {
+                invI=false;
+                invII=true;
+            }
+
+            if(invI)
+            {
+                SetInvSize.width=5*32;
+                SetInvSize.height=4*32;
+                inventoryPrice=40;
+                inventoryText.text="Inventory II";
+                inventoryButtonText.text=$"Price: {inventoryPrice}";
+            }
+            else if(invII)
+            {
+                SetInvSize.width=5*32;
+                SetInvSize.height=5*32;
+                inventoryPrice=50;
+                inventoryText.text="Inventory III";
+                inventoryButtonText.text="Maxed out";
             }
         }
     }

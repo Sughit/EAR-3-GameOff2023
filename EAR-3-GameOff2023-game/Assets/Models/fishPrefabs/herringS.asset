@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c12a1df49a1434b9ad33dbcd90bd11, type: 3}
-  m_Name: peste2
+  m_Name: herringS
   m_EditorClassIdentifier: 
-  width: 4
-  height: 2
-  itemIcon: {fileID: 21300000, guid: 50b081c9218dced4dbd1a904bcff6721, type: 3}
+  width: 1
+  height: 1
+  itemIcon: {fileID: -708625257, guid: 48094f20dba02fb46bc07bf2fe5b4e39, type: 3}

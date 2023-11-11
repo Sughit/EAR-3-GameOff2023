@@ -54,6 +54,12 @@ public class InventoryController : MonoBehaviour
             CreateItem(2);
         if(tunaS)
             CreateItem(4);
+        if(codB)
+            CreateItem(5);
+        if(barracudaB)
+            CreateItem(6);
+        if(tunaB) 
+            CreateItem(7);
 
         //totul codul trebuie sa fie scris neaparat sub if-ul asta
         if(selectedItemGrid == null)
@@ -138,6 +144,7 @@ public class InventoryController : MonoBehaviour
     {
         openInventory.aux = true;
         codS = barracudaS = salmonS = herringS = tunaS = false;
+        codB = barracudaB = salmonB = herringB = tunaB = false;
         InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
         selectedItem = inventoryItem;
 

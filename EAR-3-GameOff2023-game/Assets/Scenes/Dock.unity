@@ -826,8 +826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -270, y: 110}
-  m_SizeDelta: {x: 640, y: 320}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 128, y: 96}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &570552957
 MonoBehaviour:
@@ -1191,7 +1191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c803913d5a7714dac3680e0ea8fc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDepth: -50
   goUp: 0
   speedUp: 10
   speedDown: 5
@@ -1502,6 +1501,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608587676}
   m_CullTransparentMesh: 1
+--- !u!1 &1745739260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745739262}
+  - component: {fileID: 1745739261}
+  m_Layer: 0
+  m_Name: invReSize
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1745739261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745739260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a4e7873852077459c6a33f6ab3e0c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 403011403}
+  invTrans: {fileID: 0}
+  invGrid: {fileID: 0}
+--- !u!4 &1745739262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745739260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1827315969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1756,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0790c97d5db13004b9ab8c183f93a785, type: 2}
   - {fileID: 11400000, guid: c75d9959d07d9734fa8425fd85627bc7, type: 2}
   - {fileID: 11400000, guid: 61b2888a66c6c9c49bb8ac4f02a75a66, type: 2}
+  - {fileID: 11400000, guid: a605e57bb96e37444acc6b0f4318dbc1, type: 2}
+  - {fileID: 11400000, guid: 93221ec2334d04046b1dc4f13c68af40, type: 2}
+  - {fileID: 11400000, guid: d40fb950e0baf374a8a85747532145df, type: 2}
   itemPrefab: {fileID: 6884451839856655781, guid: 171229b0cb9753a48bc5207fd6a610e0, type: 3}
   canvasTransform: {fileID: 403011404}
 --- !u!114 &1937614489

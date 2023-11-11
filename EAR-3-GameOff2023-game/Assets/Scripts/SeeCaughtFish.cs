@@ -12,15 +12,16 @@ public class SeeCaughtFish : MonoBehaviour
         if(RememberFish.caughtCod)
         {
             RememberFish.caughtCod=false;
-            InventoryController.codS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big cod");
+                InventoryController.codB = true;
                 RememberFish.numCodS--;
                 RememberFish.numCodB++;
             }
             else
             {
+                InventoryController.codS = true;
                 Debug.Log("Spawned small cod");
             }
         }
@@ -28,15 +29,16 @@ public class SeeCaughtFish : MonoBehaviour
         else if(RememberFish.caughtBarracuda)
         {
             RememberFish.caughtBarracuda=false;
-            InventoryController.barracudaS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big barracuda");
+                InventoryController.barracudaB = true;
                 RememberFish.numBarracudaS--;
                 RememberFish.numBarracudaB++;
             }
             else
             {
+                InventoryController.barracudaS = true;
                 Debug.Log("Spawned small barracuda");
             }
         }
@@ -77,15 +79,16 @@ public class SeeCaughtFish : MonoBehaviour
         else if(RememberFish.caughtTuna)
         {
             RememberFish.caughtTuna=false;
-            InventoryController.tunaS = true;
             if(Random.Range(0,6)==3)
             {
                 Debug.Log("Spawned big tuna");
+                InventoryController.tunaB = true;
                 RememberFish.numTunaS--;
                 RememberFish.numTunaB++;
             }
             else
             {
+                InventoryController.tunaS = true;
                 Debug.Log("Spawned small tuna");
             }
         }

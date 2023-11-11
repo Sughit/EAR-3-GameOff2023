@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c12a1df49a1434b9ad33dbcd90bd11, type: 3}
-  m_Name: peste4
+  m_Name: tunaS
   m_EditorClassIdentifier: 
-  width: 3
-  height: 2
-  itemIcon: {fileID: 21300000, guid: f940522eef50894469584cdd89f3eae2, type: 3}
+  width: 1
+  height: 1
+  itemIcon: {fileID: -1721136313, guid: 48094f20dba02fb46bc07bf2fe5b4e39, type: 3}

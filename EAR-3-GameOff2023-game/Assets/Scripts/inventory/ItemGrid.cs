@@ -11,8 +11,8 @@ public class ItemGrid : MonoBehaviour
     InventoryItem[,] inventoryItemSlot;
 
     RectTransform rectTransform;
-    [SerializeField] int gridSizeWidth = 20;
-    [SerializeField] int gridSizeHeight = 10;
+    [SerializeField] public int gridSizeWidth = 20;
+    [SerializeField] public int gridSizeHeight = 10;
     [SerializeField] GameObject inventoryItemPrefab;
 
     void Start()
