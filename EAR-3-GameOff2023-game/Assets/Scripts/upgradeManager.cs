@@ -46,6 +46,7 @@ public class upgradeManager : MonoBehaviour
         baitButtonText.text=$"Price: {baitPrice}";
 
         inventoryText.text="Inventory I";
+        inventoryButtonText.text=$"Price: {inventoryPrice}";
     }
 
     public void UpgradeRod()

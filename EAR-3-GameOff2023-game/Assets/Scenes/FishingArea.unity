@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 5745825379328506369, guid: 8f52bc962c9e39e4d906a8ef3acf82cd, type: 3}
-  timeToSpawn: 4
+  minTimeToSpawn: 4
+  maxTimeToSpawn: 5
 --- !u!1 &185178890
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2577032736005972403, guid: f0cdbf58bd1a1314684725046e5bd0d5, type: 3}
-  timeToSpawn: 4
+  minTimeToSpawn: 4
+  maxTimeToSpawn: 5
 --- !u!1 &312104620
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2577032736005972403, guid: f0cdbf58bd1a1314684725046e5bd0d5, type: 3}
-  timeToSpawn: 3.5
+  minTimeToSpawn: 3.5
+  maxTimeToSpawn: 4.5
 --- !u!1 &821713864
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 5745825379328506369, guid: 8f52bc962c9e39e4d906a8ef3acf82cd, type: 3}
-  timeToSpawn: 3
+  minTimeToSpawn: 3
+  maxTimeToSpawn: 4
 --- !u!1 &928119953
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 4241254607444341480, guid: 816e5881be924cb4ab2b767737781349, type: 3}
-  timeToSpawn: 2.5
+  minTimeToSpawn: 2.5
+  maxTimeToSpawn: 3.5
 --- !u!1 &1231551298
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2311775489663006969, guid: 27777b92a1237ce4ba5b30f3d82a8cc7, type: 3}
-  timeToSpawn: 2
+  minTimeToSpawn: 2
+  maxTimeToSpawn: 3
 --- !u!1 &1646976462
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +848,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 6716950776979560644, guid: 035f87b2a92e2b846b6566ef13c7ece5, type: 3}
-  timeToSpawn: 3
+  minTimeToSpawn: 3
+  maxTimeToSpawn: 4
 --- !u!4 &912011241739258378
 Transform:
   m_ObjectHideFlags: 0
@@ -870,7 +877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c803913d5a7714dac3680e0ea8fc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDepth: -50
   goUp: 0
   speedUp: 10
   speedDown: 5
@@ -908,6 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9df5c973fb0584b8a6fcd4e6f9f32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryController: {fileID: 0}
 --- !u!114 &6637408781428502128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,7 +937,7 @@ Transform:
   m_GameObject: {fileID: 6637408781428502132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.5797, y: 4.5797, z: 4.5797}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1646976465}
@@ -1033,7 +1040,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76faae7c5f9cc5c4e9e293282ac3dbe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1057,18 +1064,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0029793382, y: 0.009797521}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.19557217, y: 0.30408937}
   m_EdgeRadius: 0
 --- !u!114 &6637408781428502136
 MonoBehaviour:
@@ -1082,3 +1089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea08e892694de9544bcbd3f711fe6ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishList:
+  - 
+  - 
+  - 
+  index: 0

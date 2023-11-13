@@ -30,13 +30,13 @@ public class FishBrain : MonoBehaviour
 
     void GetCurrentRotation()
     {
-        if(transform.position.x<=0)
+        if(transform.position.x>=0)
         {
-            faceRight=true;
+            faceRight=false;
         }
         else
         {
-            faceLeft=true;
+            faceLeft=false;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;

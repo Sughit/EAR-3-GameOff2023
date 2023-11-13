@@ -13,6 +13,7 @@ public class SetInvSize : MonoBehaviour
 
     void Update()
     {
+        canvas=GameObject.Find("Canvas").GetComponent<Canvas>();
         invTrans = canvas.transform.Find("Inventory/grid").GetComponent<RectTransform>();
         if(invTrans!=null)
         {
