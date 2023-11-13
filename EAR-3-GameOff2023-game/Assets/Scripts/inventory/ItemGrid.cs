@@ -5,8 +5,8 @@ using UnityEngine;
 public class ItemGrid : MonoBehaviour
 {
     //A SE MODIFICA IN FUNCTIE DE MARIMEA IMAGINII  
-    public const float tileSizeWidth=32;
-    public const float tileSizeHeight=32;
+    public const float tileSizeWidth=96;
+    public const float tileSizeHeight=96;
 
     InventoryItem[,] inventoryItemSlot;
 

@@ -89,8 +89,8 @@ public class StartFishing : MonoBehaviour
             {
                 baitText.text=$"Num bait {numBait}";
             }
-            caughtFish=false;
             openInv.inv.SetActive(false);
+            caughtFish=false;
             StartCoroutine(Transition()); 
         }  
         else
