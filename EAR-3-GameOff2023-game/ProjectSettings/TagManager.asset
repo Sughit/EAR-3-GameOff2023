@@ -12,6 +12,7 @@ TagManager:
   - barracuda
   - salmon
   - tuna
+  - knife
   layers:
   - Default
   - TransparentFX

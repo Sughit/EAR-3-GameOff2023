@@ -13,6 +13,7 @@ public class openInventory : MonoBehaviour
 
     public void Awake()
     {
+        aux = true;
         if(Instance)
         {
                 DestroyImmediate(gameObject);
@@ -24,8 +25,6 @@ public class openInventory : MonoBehaviour
                 DontDestroyOnLoad(cam);
                 Instance = this;
             }
-        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Dock")) 
-                aux = true;
     }
 
     void Start()
@@ -38,6 +37,8 @@ public class openInventory : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
             if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Dock")) 
                 aux = true;
+            if(SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("FishScaling") || SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("DialogueStart"))
+            aux = false;
             if(aux)
                 OpenInv();
 

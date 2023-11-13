@@ -24,10 +24,13 @@ public class StartFishing : MonoBehaviour
     [Header("UI")]
     public Text baitText;
     openInventory openInv;
+    InventoryController invCont;
 
     // Start is called before the first frame update
     void Start()
     {
+        invCont = GameObject.Find("Main Camera").GetComponent<InventoryController>();
+
         openInv = GameObject.Find("Canvas").GetComponent<openInventory>();
         if(SceneManager.GetActiveScene().name == "Dock")
             transition = GameObject.Find("Canvas2/transition");
@@ -83,15 +86,19 @@ public class StartFishing : MonoBehaviour
     {
         if(numBait>0)
         {
-            Debug.Log("Start game");
-            numBait--;
-            if(baitText!=null)
+            if (invCont.selectedItem == null)
             {
-                baitText.text=$"Num bait {numBait}";
+                Debug.Log("Start game");
+                numBait--;
+                if(baitText!=null)
+                {
+                    baitText.text=$"Num bait {numBait}";
+                }
+                openInventory.aux = false;
+                openInv.inv.SetActive(false);
+                caughtFish=false;
+                StartCoroutine(Transition()); 
             }
-            openInv.inv.SetActive(false);
-            caughtFish=false;
-            StartCoroutine(Transition()); 
         }  
         else
         {
@@ -103,8 +110,11 @@ public class StartFishing : MonoBehaviour
     {
         if(numBait<=0)
         {
-            StartCoroutine(Transition());
-            SceneManager.LoadScene("FishScaling");
+            if (invCont.selectedItem == null)
+            {
+                StartCoroutine(Transition());
+                SceneManager.LoadScene("FishScaling");
+            }
         }
     }
 
@@ -121,6 +131,8 @@ public class StartFishing : MonoBehaviour
         else if(SceneManager.GetActiveScene().name == "FishingArea")
         {
             SceneManager.LoadScene("Dock");
+            openInv.OpenInv();
+            openInventory.aux=true;
             seeCaughtFish.SpawnFishItem();
             goUp=false;
             startMiniGame=false;

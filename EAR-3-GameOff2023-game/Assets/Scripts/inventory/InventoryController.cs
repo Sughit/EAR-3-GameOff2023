@@ -6,7 +6,7 @@ public class InventoryController : MonoBehaviour
 {
     [HideInInspector]
     private ItemGrid selectedItemGrid;
-    InventoryItem selectedItem;
+    public InventoryItem selectedItem;
     InventoryItem overlapItem;
     RectTransform rectTransform;
     [SerializeField] List<ItemData> items;
@@ -178,6 +178,7 @@ public class InventoryController : MonoBehaviour
                 if(overlapItem != null)
                 {
                     selectedItem = overlapItem;
+                    selectedItem.transform.SetSiblingIndex(-999);
                     overlapItem = null;
                     rectTransform = selectedItem.GetComponent<RectTransform>();
                 }
