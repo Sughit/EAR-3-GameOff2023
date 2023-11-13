@@ -21,10 +21,14 @@ public class FishBrain : MonoBehaviour
         if(faceRight)
         {
             transform.Translate(Vector3.right * Time.deltaTime * speed);
+            if(transform.position.x>=17)
+            Destroy(this.gameObject);
         }
         else if(faceLeft)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
+            if(transform.position.x<=-17)
+            Destroy(this.gameObject);
         }
     }
 
@@ -32,11 +36,11 @@ public class FishBrain : MonoBehaviour
     {
         if(transform.position.x>=0)
         {
-            faceRight=false;
+            faceLeft=true;
         }
         else
         {
-            faceLeft=false;
+            faceRight=true;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;

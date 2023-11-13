@@ -65,30 +65,35 @@ public class FishScaling : MonoBehaviour
             {
                 fishList[0].SetActive(true);
                 canCod=false;
+                FishScalingMiniGame.registerFish=true;
                 break;
             }
             else if(canBarracuda)
             {
                 fishList[1].SetActive(true);
                 canBarracuda=false;
+                FishScalingMiniGame.registerFish=true;
                 break;
             }
             else if(canSalmon)
             {
                 fishList[2].SetActive(true);
                 canSalmon=false;
+                FishScalingMiniGame.registerFish=true;
                 break;
             }
             else if(canHerring)
             {
                 fishList[3].SetActive(true);
                 canHerring=false;
+                FishScalingMiniGame.registerFish=true;
                 break;
             }
             else if(canTuna)
             {
                 fishList[4].SetActive(true);
                 canTuna=false;
+                FishScalingMiniGame.registerFish=true;
                 break;
             }
         }
