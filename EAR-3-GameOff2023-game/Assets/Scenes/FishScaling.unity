@@ -2911,4 +2911,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545ed5f87d34492458a303889c921aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scales: []
+  fishList:
+  - {fileID: 1117103850}
+  - {fileID: 32962954}
+  - {fileID: 925136117}
+  - {fileID: 1075869024}
+  - {fileID: 31240546}
   fishScaling: {fileID: 357293638}

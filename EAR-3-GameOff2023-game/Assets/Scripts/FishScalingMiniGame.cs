@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class FishScalingMiniGame : MonoBehaviour
 {
-    public static List<GameObject> scales = new List<GameObject>();
+    public List<GameObject> scales = new List<GameObject>();
+    public GameObject[] fishList;
     public FishScaling fishScaling;
+    public static bool registerFish=true;
 
     void Update()
     {
-        foreach(var scale in scales)
+        foreach(var fish in fishList)
         {
-            if(scale!=null) return;
-            else fishScaling.ScaleFish();
+            if(fish.activeSelf)
+            {
+                if(registerFish)
+                {
+                    for(int i=0;i<fish.GetComponent<FishBody>().localScale.Length;i++)
+                    {
+                        scales.Add(fish.GetComponent<FishBody>().localScale[i]);
+                    }
+                    registerFish=false;
+                }
+                foreach(var scale in scales)
+                {
+                    if(scale!=null) return;
+                    else fishScaling.ScaleFish();
+                }
+            }
         }
     }
 }
