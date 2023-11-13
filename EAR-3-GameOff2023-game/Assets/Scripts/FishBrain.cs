@@ -32,11 +32,11 @@ public class FishBrain : MonoBehaviour
     {
         if(transform.position.x>=0)
         {
-            faceRight=false;
+            faceLeft=true;
         }
         else
         {
-            faceLeft=false;
+            faceRight=true;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
