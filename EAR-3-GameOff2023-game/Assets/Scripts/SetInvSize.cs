@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SetInvSize : MonoBehaviour
 {
     public Canvas canvas;
-    public static int width=4*32* 3;
-    public static int height=3*32 *3 ;
+    public static int width=4*96;
+    public static int height=3*96 ;
     RectTransform invTrans;
     ItemGrid invGrid;
 
@@ -22,8 +22,8 @@ public class SetInvSize : MonoBehaviour
         invGrid = canvas.transform.Find("Inventory/grid").GetComponent<ItemGrid>();
         if(invGrid!=null)
         {
-            invGrid.gridSizeWidth=width/32;
-            invGrid.gridSizeHeight=height/32;
+            invGrid.gridSizeWidth=width/96;
+            invGrid.gridSizeHeight=height/96;
         }
     }
 }
