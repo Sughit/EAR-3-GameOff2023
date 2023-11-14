@@ -38,6 +38,13 @@ public class upgradeManager : MonoBehaviour
     static bool invI;
     static bool invII;
     static bool invMax;
+    GameObject canvas;
+
+    public void Canvas()
+    {
+        canvas = GameObject.Find("Canvas");
+        Destroy(canvas.gameObject);
+    }
 
     void Start()
     {

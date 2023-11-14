@@ -14,6 +14,13 @@ public class FishScaling : MonoBehaviour
     bool canSalmon;
     bool canHerring;
     bool canTuna;
+    GameObject canvas;
+
+    public void Canvas()
+    {
+        canvas = GameObject.Find("Canvas");
+        Destroy(canvas.gameObject);
+    }
 
     void Start()
     {

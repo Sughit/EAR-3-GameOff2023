@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SetInvSize : MonoBehaviour
 {
     public Canvas canvas;
-    public static int width=4*32;
-    public static int height=3*32;
+    public static int width=4*32* 3;
+    public static int height=3*32 *3 ;
     RectTransform invTrans;
     ItemGrid invGrid;
 

@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9651327bca5e24298658d42f4f57cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedItem: {fileID: 0}
   items:
   - {fileID: 11400000, guid: f67954a41b4572e4099b2b9c21f657e9, type: 2}
   - {fileID: 11400000, guid: ccf1e1c51c8c9634cb914ed8a9ec232d, type: 2}
