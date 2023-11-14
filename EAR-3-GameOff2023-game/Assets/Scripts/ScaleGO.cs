@@ -9,6 +9,8 @@ public class ScaleGO : MonoBehaviour
         if(other.tag=="knife")
         {
             //fa animatie
+            Debug.Log("Cutit");
+            FishScalingMiniGame.currentNumScale--;
             Destroy(this.gameObject);
         }
     }

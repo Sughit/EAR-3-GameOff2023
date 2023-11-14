@@ -8,6 +8,7 @@ public class FishScalingMiniGame : MonoBehaviour
     public GameObject[] fishList;
     public FishScaling fishScaling;
     public static bool registerFish=true;
+    public static int currentNumScale;
 
     void Update()
     {
@@ -20,13 +21,14 @@ public class FishScalingMiniGame : MonoBehaviour
                     for(int i=0;i<fish.GetComponent<FishBody>().localScale.Length;i++)
                     {
                         scales.Add(fish.GetComponent<FishBody>().localScale[i]);
+                        currentNumScale++;
                     }
                     registerFish=false;
                 }
-                foreach(var scale in scales)
+                if(currentNumScale==0)
                 {
-                    if(scale!=null) return;
-                    else fishScaling.ScaleFish();
+                    fish.SetActive(false);
+                    fishScaling.ScaleFish();
                 }
             }
         }
