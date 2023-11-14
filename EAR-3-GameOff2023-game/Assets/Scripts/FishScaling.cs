@@ -15,11 +15,24 @@ public class FishScaling : MonoBehaviour
     bool canHerring;
     bool canTuna;
     GameObject canvas;
+    GameObject camera;
 
     public void Canvas()
     {
+        RememberFish.numCodS = 0;
+        RememberFish.numBarracudaS = 0;
+        RememberFish.numSalmonS = 0;
+        RememberFish.numHerringS = 0;
+        RememberFish.numTunaS = 0;
+        RememberFish.numCodB = 0;
+        RememberFish.numBarracudaB = 0;
+        RememberFish.numSalmonB = 0;
+        RememberFish.numHerringB = 0;
+        RememberFish.numTunaB = 0;
+        camera = GameObject.Find("Main Camera");
         canvas = GameObject.Find("Canvas");
         Destroy(canvas.gameObject);
+        Destroy(camera.gameObject);
     }
 
     void Start()
