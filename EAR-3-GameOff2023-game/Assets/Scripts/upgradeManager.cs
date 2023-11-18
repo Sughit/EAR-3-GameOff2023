@@ -16,9 +16,9 @@ public class upgradeManager : MonoBehaviour
     [Space]
     public GameObject transition;
     [Header("Priceses")]
-    public int rodPrice=20;
-    public int baitPrice=25;
-    public int inventoryPrice=30;
+    public static int rodPrice=20;
+    public static int baitPrice=25;
+    public static int inventoryPrice=30;
     [Header("CurrentMoney")]
     public Text currentMoney;
     [Header("Stats")]
@@ -46,25 +46,22 @@ public class upgradeManager : MonoBehaviour
         rodLength=StartFishing.maxDepth;
         numBait=StartFishing.maxNumBait;
 
-        if(rodI) rodText.text="Rod I";
-        else if(rodII) rodText.text="Rod II";
-        else if(rodMax) rodText.text="Rod III";
+        if(rodI) rodText.text="Rod II";
+        else if(rodII) rodText.text="Rod III";
 
-        if(!rodMax) rodButtonText.text=$"Price: {rodPrice}";
+        if(!rodII) rodButtonText.text=$"Price: {rodPrice}";
         else rodButtonText.text="Maxed out";
 
-        if(baitI) baitText.text="Bait I";
-        else if(baitII) baitText.text="Bait II";
-        else if(baitMax) baitText.text="Bait III"; 
+        if(baitI) baitText.text="Bait II";
+        else if(baitII) baitText.text="Bait III";
         
-        if(!baitMax) baitButtonText.text=$"Price: {baitPrice}";
+        if(!baitII) baitButtonText.text=$"Price: {baitPrice}";
         else baitButtonText.text="Maxed out";
 
-        if(invI) inventoryText.text="Inventory I";
-        else if(invII) inventoryText.text="Inventory II";
-        else if(invMax) inventoryText.text="Inventory III";
+        if(invI) inventoryText.text="Inventory II";
+        else if(invII) inventoryText.text="Inventory III";
         
-        if(!invMax) inventoryButtonText.text=$"Price: {inventoryPrice}";
+        if(!invII) inventoryButtonText.text=$"Price: {inventoryPrice}";
         else inventoryButtonText.text="Maxed out";
     }
 
@@ -92,7 +89,7 @@ public class upgradeManager : MonoBehaviour
                 rodText.text="Rod II";
                 rodButtonText.text=$"Price: {rodPrice}";
             }
-            else if(rodII)
+            else if(rodII && !rodMax)
             {
                 StartFishing.maxDepth=-100;
                 rodLength=StartFishing.maxDepth;
@@ -130,7 +127,7 @@ public class upgradeManager : MonoBehaviour
                 baitText.text="Bait II";
                 baitButtonText.text=$"Price: {baitPrice}";
             }
-            else if(baitII)
+            else if(baitII && !baitMax)
             {
                 StartFishing.maxNumBait=7;
                 numBait=StartFishing.maxNumBait;
@@ -168,7 +165,7 @@ public class upgradeManager : MonoBehaviour
                 inventoryText.text="Inventory II";
                 inventoryButtonText.text=$"Price: {inventoryPrice}";
             }
-            else if(invII)
+            else if(invII && !invMax)
             {
                 SetInvSize.width=5*32;
                 SetInvSize.height=5*32;
