@@ -23,11 +23,8 @@ public class hookController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         moveDirection = new Vector2(horizontal , 0);
-        moveDirection.Normalize();
+        //moveDirection.Normalize();
+        rb.velocity = moveDirection * speed ;
     }
 
-    private void FixedUpdate()
-    {
-        rb.velocity = moveDirection * speed;
-    }
 }
