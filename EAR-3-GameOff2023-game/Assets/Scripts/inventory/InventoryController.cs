@@ -39,10 +39,10 @@ public class InventoryController : MonoBehaviour
     {
         ItemIconDrag();
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            CreateRandomItem();
-        }
+        //if(Input.GetKeyDown(KeyCode.Q))
+        //{
+        //     CreateRandomItem();
+        //}
         
         if(codS)
             CreateItem(0);
