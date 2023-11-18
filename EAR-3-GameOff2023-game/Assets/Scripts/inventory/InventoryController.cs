@@ -18,7 +18,7 @@ public class InventoryController : MonoBehaviour
     public static bool codS, barracudaS, salmonS, herringS, tunaS;
     public static bool codB, barracudaB, salmonB, herringB, tunaB;
     string fish;
-        openInventory openInv;
+    openInventory openInv;
     public ItemGrid SelectedItemGrid
     { 
         get => selectedItemGrid; 
@@ -75,6 +75,21 @@ public class InventoryController : MonoBehaviour
         {
                 LeftMouseButtonPress();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RotateItem();
+        }
+    }
+
+    private void RotateItem()
+    {
+        if(selectedItem == null) 
+        {
+            return;
+        }
+
+        selectedItem.Rotate();
     }
 
 
@@ -104,7 +119,7 @@ public class InventoryController : MonoBehaviour
         }
         else
         {
-            inventoryHighlight.Show(selectedItemGrid.BoundaryCheck(positionOnGrid.x, positionOnGrid.y, selectedItem.itemData.width, selectedItem.itemData.height));
+            inventoryHighlight.Show(selectedItemGrid.BoundaryCheck(positionOnGrid.x, positionOnGrid.y, selectedItem.WIDTH, selectedItem.HEIGHT));
             inventoryHighlight.SetSize(selectedItem);
             inventoryHighlight.SetPosition(selectedItemGrid, selectedItem, positionOnGrid.x, positionOnGrid.y);
         }
@@ -131,8 +146,8 @@ public class InventoryController : MonoBehaviour
 
             if (selectedItem != null)
             {
-                position.x -= (selectedItem.itemData.width - 1) * ItemGrid.tileSizeWidth / 2;
-                position.y -= (selectedItem.itemData.height - 1) * ItemGrid.tileSizeHeight / 2;
+                position.x -= (selectedItem.WIDTH - 1) * ItemGrid.tileSizeWidth / 2;
+                position.y -= (selectedItem.HEIGHT - 1) * ItemGrid.tileSizeHeight / 2;
             }
             Vector2Int tileGridPosition = selectedItemGrid.GetTileGridPosition(Input.mousePosition);
 

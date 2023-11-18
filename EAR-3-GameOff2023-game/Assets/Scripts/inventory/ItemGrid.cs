@@ -40,9 +40,9 @@ public class ItemGrid : MonoBehaviour
 
     void CleanGridReference(InventoryItem item)
     {
-        for (int ix = 0; ix < item.itemData.width; ix++)
+        for (int ix = 0; ix < item.WIDTH; ix++)
         {
-            for (int iy = 0; iy < item.itemData.height; iy++)
+            for (int iy = 0; iy < item.HEIGHT; iy++)
             {
                 inventoryItemSlot[item.onGridPositionX + ix, item.onGridPositionY + iy] = null;
             }
@@ -78,11 +78,11 @@ public class ItemGrid : MonoBehaviour
     public bool PlaceItem(InventoryItem inventoryItem, int posX, int posY, ref InventoryItem overlapItem)
     {
 
-        if (BoundaryCheck(posX, posY, inventoryItem.itemData.width, inventoryItem.itemData.height) == false)
+        if (BoundaryCheck(posX, posY, inventoryItem.WIDTH, inventoryItem.HEIGHT) == false)
             return false;
 
 
-        if(OverlapCheck(posX, posY, inventoryItem.itemData.width, inventoryItem.itemData.height, ref overlapItem) == false)
+        if(OverlapCheck(posX, posY, inventoryItem.WIDTH, inventoryItem.HEIGHT, ref overlapItem) == false)
         {
             overlapItem = null;
             return false;
@@ -97,9 +97,9 @@ public class ItemGrid : MonoBehaviour
 
 
 
-        for (int x = 0; x < inventoryItem.itemData.width; x++)
+        for (int x = 0; x < inventoryItem.WIDTH; x++)
         {
-            for(int y = 0; y < inventoryItem.itemData.height; y++)
+            for(int y = 0; y < inventoryItem.HEIGHT; y++)
             {
                 inventoryItemSlot[posX + x, posY + y] = inventoryItem;
             }
@@ -122,8 +122,8 @@ public class ItemGrid : MonoBehaviour
     public Vector2 CalculatePositionOnGrid(InventoryItem inventoryItem, int posX, int posY)
     {
         Vector2 position = new Vector2();
-        position.x = posX * tileSizeWidth + tileSizeWidth * inventoryItem.itemData.width / 2;
-        position.y = -(posY * tileSizeHeight + tileSizeHeight * inventoryItem.itemData.height / 2);
+        position.x = posX * tileSizeWidth + tileSizeWidth * inventoryItem.WIDTH / 2;
+        position.y = -(posY * tileSizeHeight + tileSizeHeight * inventoryItem.HEIGHT / 2);
 
         return position;
     }
