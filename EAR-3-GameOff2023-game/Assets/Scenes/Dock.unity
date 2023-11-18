@@ -235,7 +235,7 @@ Transform:
   - {fileID: 1058984854}
   - {fileID: 1425273341}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &169137029
 GameObject:
@@ -264,7 +264,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169137029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 3.1747, y: 3.1747, z: 3.1747}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 403011402}
   - component: {fileID: 403011401}
   - component: {fileID: 403011405}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ RectTransform:
   m_Children:
   - {fileID: 557495811}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557495811}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 570552959}
   - component: {fileID: 570552958}
   - component: {fileID: 570552957}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 625706894}
   - component: {fileID: 625706893}
   - component: {fileID: 625706892}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784343290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 3.1747, y: 3.1747, z: 3.1747}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1034,7 +1034,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &867976277
 MonoBehaviour:
@@ -1146,7 +1146,7 @@ GameObject:
   - component: {fileID: 1106678237}
   - component: {fileID: 1106678236}
   - component: {fileID: 1106678235}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: deleteGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1499,7 +1499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1745739261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ RectTransform:
   - {fileID: 2120260393}
   - {fileID: 2008367390}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1716,7 +1716,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1937614488
 MonoBehaviour:
@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9651327bca5e24298658d42f4f57cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedItem: {fileID: 0}
   items:
   - {fileID: 11400000, guid: f67954a41b4572e4099b2b9c21f657e9, type: 2}
   - {fileID: 11400000, guid: ccf1e1c51c8c9634cb914ed8a9ec232d, type: 2}
@@ -1820,7 +1821,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2008367390 stripped
 RectTransform:
@@ -1919,7 +1920,7 @@ GameObject:
   - component: {fileID: 5173034938601547129}
   - component: {fileID: 5173034938601547131}
   - component: {fileID: 5173034938601547130}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: highlighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

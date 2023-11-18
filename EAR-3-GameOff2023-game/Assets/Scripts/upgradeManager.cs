@@ -38,6 +38,26 @@ public class upgradeManager : MonoBehaviour
     static bool invI;
     static bool invII;
     static bool invMax;
+    GameObject canvas;
+    GameObject camera;
+
+    public void Canvas()
+    {
+        RememberFish.numCodS = 0;
+        RememberFish.numBarracudaS = 0;
+        RememberFish.numSalmonS = 0;
+        RememberFish.numHerringS = 0;
+        RememberFish.numTunaS = 0;
+        RememberFish.numCodB = 0;
+        RememberFish.numBarracudaB = 0;
+        RememberFish.numSalmonB = 0;
+        RememberFish.numHerringB = 0;
+        RememberFish.numTunaB = 0;
+        camera = GameObject.Find("Main Camera");
+        canvas = GameObject.Find("Canvas");
+        Destroy(canvas.gameObject);
+        Destroy(camera.gameObject);
+    }
 
     void Start()
     {
@@ -145,11 +165,11 @@ public class upgradeManager : MonoBehaviour
     {
         if(DayManager.moneyNum >= inventoryPrice)
         {
-            if(SetInvSize.width==4*32 && SetInvSize.height==3*32)
+            if(SetInvSize.width==4*96 && SetInvSize.height==3*96)
             {
                 invI=true;
             }
-            else if(SetInvSize.width==5*32 && SetInvSize.height==4*32)
+            else if(SetInvSize.width==5*96 && SetInvSize.height==4*96)
             {
                 invI=false;
                 invII=true;
@@ -157,8 +177,8 @@ public class upgradeManager : MonoBehaviour
 
             if(invI)
             {
-                SetInvSize.width=5*32;
-                SetInvSize.height=4*32;
+                SetInvSize.width=5*96;
+                SetInvSize.height=4*96;
                 DayManager.moneyNum-=inventoryPrice;
                 currentMoney.text=$"Money: {DayManager.moneyNum}";
                 inventoryPrice=40;
@@ -167,8 +187,8 @@ public class upgradeManager : MonoBehaviour
             }
             else if(invII && !invMax)
             {
-                SetInvSize.width=5*32;
-                SetInvSize.height=5*32;
+                SetInvSize.width=5*96;
+                SetInvSize.height=5*96;
                 DayManager.moneyNum-=inventoryPrice;
                 currentMoney.text=$"Money: {DayManager.moneyNum}";
                 //inventoryPrice=50;

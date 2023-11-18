@@ -203,6 +203,22 @@ public class InventoryController : MonoBehaviour
 
     public void Delete()
     {
-        Destroy(selectedItem.gameObject);
+        if(selectedItem.itemData.name == "barracudaB")
+                {RememberFish.numBarracudaB--;}
+        if(selectedItem.itemData.name == "barracudaS")
+                {RememberFish.numBarracudaS--;;}
+        if(selectedItem.itemData.name == "codB")
+                {RememberFish.numCodB--;}
+        if(selectedItem.itemData.name == "codS")
+                {RememberFish.numCodS--;}
+        if(selectedItem.itemData.name == "herringS")
+                {RememberFish.numHerringS--;  }  
+        if(selectedItem.itemData.name == "salmonS")
+                {RememberFish.numSalmonS--; }
+        if(selectedItem.itemData.name == "tunaB")
+                {RememberFish.numTunaB--; }
+        if(selectedItem.itemData.name == "tunaS")
+                {RememberFish.numTunaS--;}
+            Destroy(selectedItem.gameObject);
     }
 }

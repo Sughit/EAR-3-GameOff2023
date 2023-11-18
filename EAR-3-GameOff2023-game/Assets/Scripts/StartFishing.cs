@@ -112,6 +112,7 @@ public class StartFishing : MonoBehaviour
         {
             if (invCont.selectedItem == null)
             {
+                openInv.inv.SetActive(false);
                 StartCoroutine(Transition());
                 SceneManager.LoadScene("FishScaling");
             }
