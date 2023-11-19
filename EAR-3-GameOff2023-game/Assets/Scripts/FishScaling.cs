@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FishScaling : MonoBehaviour
 {
+    public FollowMouse knife;
     public GameObject transition;
     public DayManager dayManager;
     [Space]
@@ -61,6 +62,8 @@ public class FishScaling : MonoBehaviour
         {
             Debug.Log("There are fish to be scaled");
         }
+        knife.knife.enabled = false;
+        Cursor.visible = true;
     }
 
     public void SeeWhatFishToShow()
