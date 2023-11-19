@@ -62,7 +62,7 @@ public class DayManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Dialogue Start");
+            SceneManager.LoadScene("DialogueStart");
         }
     }
 
