@@ -632,6 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8e3c8f1cb703f4cb1e3ddfe0b2ccff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knife: {fileID: 818456299}
   transition: {fileID: 1378033019}
   dayManager: {fileID: 2112666421}
   fishList:
@@ -1273,6 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bec9dd0b600fe46b53e640a374dc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knife: {fileID: 0}
 --- !u!114 &818456300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2870,6 +2872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayText: {fileID: 871485559}
+  moneyMade: 0
   moneyText: {fileID: 1210126894}
   dayMenu: {fileID: 1947745234}
   transition: {fileID: 1378033019}
