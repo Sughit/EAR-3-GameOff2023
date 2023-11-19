@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class DayManager : MonoBehaviour
 {
     public static int dayNum = 1;
+    public static int finishDayNum = 10;
     public Text dayText;
     public static int moneyNum;
+    public int moneyMade;
     public Text moneyText;
 
     public GameObject dayMenu;
@@ -21,7 +23,7 @@ public class DayManager : MonoBehaviour
         dayText.text=$"Day: {dayNum}";
         dayNum++;
 
-        moneyNum = RememberFish.numCodS * Random.Range(5,11) +
+        moneyMade = RememberFish.numCodS * Random.Range(5,11) +
                    RememberFish.numCodB * Random.Range(15,26) +
                    RememberFish.numBarracudaS * Random.Range(10,16) +
                    RememberFish.numBarracudaB * Random.Range(20,31) +
@@ -32,7 +34,9 @@ public class DayManager : MonoBehaviour
                    RememberFish.numTunaS * Random.Range(10,16) +
                    RememberFish.numTunaB * Random.Range(45,61);
 
-        moneyText.text=$"Money made: {moneyNum}";
+        moneyText.text=$"Money made: {moneyMade}";
+        moneyNum+=moneyMade;
+        moneyMade=0;
     }
 
     public void NextDay()
@@ -52,7 +56,14 @@ public class DayManager : MonoBehaviour
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
         dayMenu.SetActive(false);
-        SceneManager.LoadScene("Dock");
+        if(finishDayNum!=dayNum)
+        {
+            SceneManager.LoadScene("Dock");
+        }
+        else
+        {
+            SceneManager.LoadScene("Dialogue Start");
+        }
     }
 
     IEnumerator TransitionToUpgrade()
