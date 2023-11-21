@@ -21,7 +21,7 @@ public class mainMenuScript : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Dock");
     }
     public void QuitGame()
     {
