@@ -8,10 +8,13 @@ public class DayManager : MonoBehaviour
 {
     public static int dayNum = 1;
     public static int finishDayNum = 10;
+    public int rent;
+    public int bait;
     public Text dayText;
     public static int moneyNum;
     public int moneyMade;
     public Text moneyText;
+    public Text moneyTotal;
 
     public GameObject dayMenu;
     public GameObject transition;
@@ -36,6 +39,9 @@ public class DayManager : MonoBehaviour
 
         moneyText.text=$"Money made: {moneyMade}";
         moneyNum+=moneyMade;
+        moneyNum-=rent;
+        moneyNum-=bait;
+        moneyTotal.text=$"Total: {moneyNum}";
         moneyMade=0;
     }
 
