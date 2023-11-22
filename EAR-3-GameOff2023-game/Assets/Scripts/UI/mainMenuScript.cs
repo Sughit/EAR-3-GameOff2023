@@ -21,7 +21,7 @@ public class mainMenuScript : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Dock");
+        SceneManager.LoadScene("DialogueStart");
     }
     public void QuitGame()
     {
