@@ -11,6 +11,9 @@ public class InGameMenu : MonoBehaviour
     GameObject canvButoane;
     GameObject canvPeste;
     GameObject canvUpgrade;
+    public GameObject transition;
+    bool dock;
+    bool menu;
     void Awake()
     {
         openInv = this.GetComponent<openInventory>();
@@ -101,11 +104,61 @@ public class InGameMenu : MonoBehaviour
             }
     }
 
+    public void TotalRestart()
+    {
+        //resetare toate variabilele
+        RememberFish.numCodS = 0;
+        RememberFish.numBarracudaS = 0;
+        RememberFish.numSalmonS = 0;
+        RememberFish.numHerringS = 0;
+        RememberFish.numTunaS = 0;
+        RememberFish.numCodB = 0;
+        RememberFish.numBarracudaB = 0;
+        RememberFish.numSalmonB = 0;
+        RememberFish.numHerringB = 0;
+        RememberFish.numTunaB = 0;
+
+        upgradeManager.rodI=false;
+        upgradeManager.rodII=false;
+        upgradeManager.rodMax=false;
+        upgradeManager.baitI=false;
+        upgradeManager.baitII=false;
+        upgradeManager.baitMax=false;
+        upgradeManager.invI=false;
+        upgradeManager.invII=false;
+        upgradeManager.invMax=false;
+
+        DayManager.dayNum=1;
+        DayManager.moneyNum=0;
+
+        StartFishing.maxDepth=-50f;
+        StartFishing.maxNumBait=3;
+        StartFishing.numBait=3;
+
+        StartCoroutine(TransitionDock());
+    }
+
     public void MainMenu()
     {
         meniuDeschis = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(TransitionMenu());
         meniu.SetActive(false);
+    }
+
+    IEnumerator TransitionMenu()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    IEnumerator TransitionDock()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Dock");
     }
 }

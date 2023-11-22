@@ -28,17 +28,17 @@ public class upgradeManager : MonoBehaviour
     public int widthInv=128;
     public int heightInv=96;
 
-    static bool rodI;
-    static bool rodII;
-    static bool rodMax;
+    public static bool rodI;
+    public static bool rodII;
+    public static bool rodMax;
 
-    static bool baitI;
-    static bool baitII;
-    static bool baitMax;
+    public static bool baitI;
+    public static bool baitII;
+    public static bool baitMax;
 
-    static bool invI;
-    static bool invII;
-    static bool invMax;
+    public static bool invI;
+    public static bool invII;
+    public static bool invMax;
     GameObject canvas;
     GameObject camera;
 
