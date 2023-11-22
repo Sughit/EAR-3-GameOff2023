@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class upgradeManager : MonoBehaviour
 {
+    public GameObject sunetPWR;
     public Text rodText;
     public Text baitText;
     public Text inventoryText;
@@ -91,12 +92,14 @@ public class upgradeManager : MonoBehaviour
         {
             if(StartFishing.maxDepth==-50)
             {
+                Instantiate(sunetPWR);
                 rodI=true;
             }
             else if(StartFishing.maxDepth==-75)
             {
                 rodI=false;
                 rodII=true;
+                Instantiate(sunetPWR);
             }
 
             if(rodI)
@@ -130,11 +133,13 @@ public class upgradeManager : MonoBehaviour
             if(StartFishing.maxNumBait==3)
             {
                 baitI=true;
+                Instantiate(sunetPWR);
             }
             else if(StartFishing.maxNumBait==5)
             {
                 baitI=false;
                 baitII=true;
+                Instantiate(sunetPWR);
             }
 
             if(baitI)
@@ -168,11 +173,13 @@ public class upgradeManager : MonoBehaviour
             if(SetInvSize.width==4*96 && SetInvSize.height==3*96)
             {
                 invI=true;
+                Instantiate(sunetPWR);
             }
             else if(SetInvSize.width==5*96 && SetInvSize.height==4*96)
             {
                 invI=false;
                 invII=true;
+                Instantiate(sunetPWR);
             }
 
             if(invI)

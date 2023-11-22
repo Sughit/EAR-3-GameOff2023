@@ -2070,6 +2070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f76df69938d0448865237221616a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunetPWR: {fileID: 7042485457619327844, guid: 80591c6cdeee0aa419ff6922b92ae5d0, type: 3}
   rodText: {fileID: 1797709683}
   baitText: {fileID: 577799028}
   inventoryText: {fileID: 1743150182}
