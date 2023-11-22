@@ -7,7 +7,7 @@ public class mainMenuScript : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject settingsMenu;
-
+    public GameObject transition;
 
     public void SettingsMenu()
     {
@@ -21,10 +21,18 @@ public class mainMenuScript : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("DialogueStart");
+        StartCoroutine(TransitionGame());
     }
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator TransitionGame()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("DialogueStart");
     }
 }
