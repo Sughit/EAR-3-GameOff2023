@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     public GameObject fish;
+    public GameObject goldFish;
     public float minTimeToSpawn;
     public float maxTimeToSpawn;
     float timeToSpawn;
@@ -20,7 +21,14 @@ public class FishSpawner : MonoBehaviour
     {
         if(currentTime<=0)
         {
-            Instantiate(fish,transform.position, Quaternion.identity);
+            if(DayManager.dayNum==10 && Random.Range(1,5)==2)
+            {
+                Instantiate(goldFish,transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(fish,transform.position, Quaternion.identity);
+            }
             currentTime=Random.Range(minTimeToSpawn, maxTimeToSpawn);
         }
         else

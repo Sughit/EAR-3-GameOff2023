@@ -15,8 +15,8 @@ public class InventoryController : MonoBehaviour
     InventoryHighlight inventoryHighlight;
     InventoryItem itemToHighlight;
     Vector2Int oldPosition;
-    public static bool codS, barracudaS, salmonS, herringS, tunaS;
-    public static bool codB, barracudaB, salmonB, herringB, tunaB;
+    public static bool codS, barracudaS, salmonS, herringS, tunaS, goldFishS;
+    public static bool codB, barracudaB, salmonB, herringB, tunaB, goldFishB;
     string fish;
     openInventory openInv;
     public ItemGrid SelectedItemGrid
@@ -60,6 +60,8 @@ public class InventoryController : MonoBehaviour
             CreateItem(6);
         if(tunaB) 
             CreateItem(7);
+        if(goldFishS)
+            CreateItem(8);
 
         //totul codul trebuie sa fie scris neaparat sub if-ul asta
         if(selectedItemGrid == null)
@@ -158,8 +160,8 @@ public class InventoryController : MonoBehaviour
     public void CreateItem(int fish)
     {
         openInventory.aux = true;
-        codS = barracudaS = salmonS = herringS = tunaS = false;
-        codB = barracudaB = salmonB = herringB = tunaB = false;
+        codS = barracudaS = salmonS = herringS = tunaS = goldFishS = false;
+        codB = barracudaB = salmonB = herringB = tunaB = goldFishB = false;
         InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
         selectedItem = inventoryItem;
 

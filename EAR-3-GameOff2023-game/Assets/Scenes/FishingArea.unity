@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 5745825379328506369, guid: 8f52bc962c9e39e4d906a8ef3acf82cd, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 4
   maxTimeToSpawn: 5
 --- !u!1 &185178890
@@ -215,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2577032736005972403, guid: f0cdbf58bd1a1314684725046e5bd0d5, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 4
   maxTimeToSpawn: 5
 --- !u!1 &312104620
@@ -262,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2577032736005972403, guid: f0cdbf58bd1a1314684725046e5bd0d5, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 3.5
   maxTimeToSpawn: 4.5
 --- !u!1 &821713864
@@ -309,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 5745825379328506369, guid: 8f52bc962c9e39e4d906a8ef3acf82cd, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 3
   maxTimeToSpawn: 4
 --- !u!1 &928119953
@@ -356,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 4241254607444341480, guid: 816e5881be924cb4ab2b767737781349, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 2.5
   maxTimeToSpawn: 3.5
 --- !u!1 &1231551298
@@ -572,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 2311775489663006969, guid: 27777b92a1237ce4ba5b30f3d82a8cc7, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 2
   maxTimeToSpawn: 3
 --- !u!1 &1646976462
@@ -848,6 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 6716950776979560644, guid: 035f87b2a92e2b846b6566ef13c7ece5, type: 3}
+  goldFish: {fileID: 3746458770278575792, guid: d5d129e9ba1bea44ca6ceb1e45042976, type: 3}
   minTimeToSpawn: 3
   maxTimeToSpawn: 4
 --- !u!4 &912011241739258378

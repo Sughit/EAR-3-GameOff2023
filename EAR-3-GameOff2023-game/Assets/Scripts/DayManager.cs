@@ -47,8 +47,16 @@ public class DayManager : MonoBehaviour
 
     public void NextDay()
     {
-        StartFishing.numBait=StartFishing.maxNumBait;
-        StartCoroutine(Transition());
+        if(!GoldFishScript.goldFish)
+        {
+            StartFishing.numBait=StartFishing.maxNumBait;
+            StartCoroutine(Transition());
+        }
+        else
+        {
+            DialogueManager.finalDay=true;
+            StartCoroutine(Transition());
+        }
     }
 
     public void Upgrade()
@@ -62,7 +70,7 @@ public class DayManager : MonoBehaviour
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
         dayMenu.SetActive(false);
-        if(finishDayNum!=dayNum)
+        if(finishDayNum!=dayNum-1/*pt ca creste imediat dupa ce ai dat next day*/)
         {
             SceneManager.LoadScene("Dock");
         }

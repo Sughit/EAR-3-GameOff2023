@@ -92,5 +92,21 @@ public class SeeCaughtFish : MonoBehaviour
                 Debug.Log("Spawned small tuna");
             }
         }
+        //Spawn gold fish item
+        else if(RememberFish.caughtGoldFish)
+        {
+            RememberFish.caughtGoldFish=false;
+            InventoryController.goldFishS = true;
+            if(Random.Range(0,6)==3)
+            {
+                Debug.Log("Spawned big goldFish");
+                RememberFish.numGoldFishS--;
+                RememberFish.numGoldFishB++;
+            }
+            else
+            {
+                Debug.Log("Spawned small goldFish");
+            }
+        }
     }
 }

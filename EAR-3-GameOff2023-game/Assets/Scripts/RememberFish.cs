@@ -9,12 +9,14 @@ public class RememberFish : MonoBehaviour
     public static int numSalmonS;
     public static int numHerringS;
     public static int numTunaS;
+    public static int numGoldFishS;
 
     public static int numCodB;
     public static int numBarracudaB;
     public static int numSalmonB;
     public static int numHerringB;
     public static int numTunaB;
+    public static int numGoldFishB;
 
     public string[] fishList= new string[StartFishing.maxNumBait];
     public int index;
@@ -24,6 +26,7 @@ public class RememberFish : MonoBehaviour
     public static bool caughtSalmon;
     public static bool caughtHerring;
     public static bool caughtTuna;
+    public static bool caughtGoldFish;
 
     public void AddFish(string fish)
     {
@@ -54,6 +57,10 @@ public class RememberFish : MonoBehaviour
                 case "tuna":
                 caughtTuna=true;
                 numTunaS++;
+                break;
+                case "goldFish":
+                caughtGoldFish=true;
+                numGoldFishS++;
                 break;
                 default:
                 Debug.Log("Peste neidentificat");
