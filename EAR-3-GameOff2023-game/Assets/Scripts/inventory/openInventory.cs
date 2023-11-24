@@ -43,11 +43,11 @@ public class openInventory : MonoBehaviour
                 OpenInv();
 
 
-        if(invOpen && Input.GetKeyDown(KeyCode.Escape))
-        {
-            inv.SetActive(false);
-            invOpen = false;
-        }
+        // if(invOpen && Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     inv.SetActive(false);
+        //     invOpen = false;
+        // }
     }
 
     public void OpenInv()

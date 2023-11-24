@@ -135,7 +135,8 @@ public class InGameMenu : MonoBehaviour
         StartFishing.maxNumBait=3;
         StartFishing.numBait=3;
 
-        SceneManager.LoadScene("Dock");
+        Time.timeScale = 1;
+        StartCoroutine(TransitionDock());
         //StartCoroutine(TransitionDock());
     }
 
