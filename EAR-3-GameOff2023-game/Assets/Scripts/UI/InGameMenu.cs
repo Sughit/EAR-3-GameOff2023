@@ -138,6 +138,11 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = 1;
         StartCoroutine(TransitionDock());
         //StartCoroutine(TransitionDock());
+        GameObject camera = GameObject.Find("Main Camera");
+        GameObject canvas = GameObject.Find("Canvas");
+        Destroy(canvas.gameObject);
+        Destroy(camera.gameObject);
+        SceneManager.LoadScene("Dock");
     }
 
     public void MainMenu()
@@ -163,4 +168,5 @@ public class InGameMenu : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Dock");
     }
+
 }

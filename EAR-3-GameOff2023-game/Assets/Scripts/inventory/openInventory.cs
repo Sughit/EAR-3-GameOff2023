@@ -10,6 +10,7 @@ public class openInventory : MonoBehaviour
     public static bool aux;
     public static openInventory Instance;
     public GameObject cam;
+    public GameObject sound;
 
     public void Awake()
     {
@@ -36,7 +37,10 @@ public class openInventory : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
             if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Dock")) 
-                aux = true;
+                {
+                    Instantiate(sound);
+                    aux = true;
+                }
             if(SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("FishScaling") || SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("DialogueStart"))
             aux = false;
             if(aux)
