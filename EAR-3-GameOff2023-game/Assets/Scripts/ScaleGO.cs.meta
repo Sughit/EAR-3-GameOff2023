@@ -3,7 +3,16 @@ guid: 65192e32dde6ef34f92e648328b08255
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sunet1: {fileID: 8133707714375920428, guid: b3d3f231fef97fe44bc39a191549eb46, type: 3}
+  - sunet2: {fileID: 8133707714375920428, guid: 47ab8c6f255a77d47b4da9ed77f6e0de, type: 3}
+  - sunet3: {instanceID: 0}
+  - sunet4: {instanceID: 0}
+  - sunet5: {instanceID: 0}
+  - sunet6: {instanceID: 0}
+  - sunet7: {instanceID: 0}
+  - sunet8: {instanceID: 0}
+  - sunet9: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
