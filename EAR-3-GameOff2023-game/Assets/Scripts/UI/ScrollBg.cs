@@ -9,7 +9,11 @@ public class ScrollBg : MonoBehaviour
         MeshRenderer mr = GetComponent<MeshRenderer>();
         Material mat = mr.material;
         Vector2 offSet = mat.mainTextureOffset;
-        offSet.y -= Time.deltaTime/10f;
+        // pt scroll vertical
+        // offSet.y -= Time.deltaTime/10f;
+        // pt miscare cu carligul
+        offSet.x = transform.position.x / transform.localScale.x / 7f;
+        offSet.y = transform.position.y / transform.localScale.y / 7f;
         mat.mainTextureOffset = offSet;
     }
 }
