@@ -135,6 +135,10 @@ public class InGameMenu : MonoBehaviour
         StartFishing.maxNumBait=3;
         StartFishing.numBait=3;
 
+        upgradeManager.rodPrice=20;
+        upgradeManager.baitPrice=25;
+        upgradeManager.inventoryPrice=30;
+
         Time.timeScale = 1;
         StartCoroutine(TransitionDock());
         //StartCoroutine(TransitionDock());
