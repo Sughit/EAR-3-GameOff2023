@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    index=0;
+                    StartCoroutine(EndTransition());
                 }
             }
         }
@@ -110,4 +110,12 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Dock");
     }
+
+    IEnumerator EndTransition()
+    {
+        Animator transitionAnim=transition.GetComponent<Animator>();
+        transitionAnim.SetTrigger("trans");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Credits");
+    }    
 }

@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueStart.unity
     guid: 4f375903b95c6b04990ec659fa593938
   - enabled: 1
-    path: Assets/Scenes/FishScaling.unity
-    guid: cec6507176cca7946af02eeb95c7e409
-  - enabled: 1
     path: Assets/Scenes/Dock.unity
     guid: 1be85f0c36b998d469a9a8d8079fdad0
   - enabled: 1
     path: Assets/Scenes/FishingArea.unity
     guid: 7536cf1aa47a7fe40ac56f30fd9e5f16
   - enabled: 1
+    path: Assets/Scenes/FishScaling.unity
+    guid: cec6507176cca7946af02eeb95c7e409
+  - enabled: 1
     path: Assets/Scenes/Upgrade.unity
     guid: 020f849e36cf5c44cbc07a4621c69a05
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: b0449113952e3f445bc1d818658e019d
   m_configObjects: {}
