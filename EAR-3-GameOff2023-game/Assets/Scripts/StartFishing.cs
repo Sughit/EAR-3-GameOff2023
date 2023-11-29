@@ -132,6 +132,7 @@ public class StartFishing : MonoBehaviour
         else if(SceneManager.GetActiveScene().name == "FishingArea")
         {
             SceneManager.LoadScene("Dock");
+            openInv.invOpen = false;
             openInv.OpenInv();
             openInventory.aux=true;
             seeCaughtFish.SpawnFishItem();

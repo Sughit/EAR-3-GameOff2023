@@ -35,7 +35,7 @@ public class InGameMenu : MonoBehaviour
                 }
 
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !meniuDeschis && SceneManager.GetActiveScene () != SceneManager.GetSceneByName ("MainMenu"))
+        if (Input.GetKeyDown(KeyCode.Escape) && !meniuDeschis && SceneManager.GetActiveScene () != SceneManager.GetSceneByName ("MainMenu") && SceneManager.GetActiveScene () != SceneManager.GetSceneByName ("DialogueStart"))
             {
                 meniuDeschis = true;
                 meniu.SetActive(true);

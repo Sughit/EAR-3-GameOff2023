@@ -14,6 +14,7 @@ public class openInventory : MonoBehaviour
 
     public void Awake()
     {
+        inv.SetActive(true);
         aux = true;
         if(Instance)
         {
@@ -42,7 +43,7 @@ public class openInventory : MonoBehaviour
                     aux = true;
                 }
             if(SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("FishScaling") || SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("DialogueStart"))
-            aux = false;
+                aux = false;
             if(aux)
                 OpenInv();
 
